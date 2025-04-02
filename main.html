@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Questionaire</title>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+
+            background-image: url('orange.png');
+        }
+        .left-aligned {
+            text-align: left;
+
+        }
+        .container {
+            background: #f5f4e6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10px;
+
+        }
+
+        li {
+            margin: 4px
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background: #ff660d;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>Welcome to the Official Princeton Paw Questionnaire</h3>
+    <h4>Completion of this list may result in epic memories <br> (or a whole lot of peril) </h4>
+
+    <form id="colorForm" action="result.html" method="GET">
+        <div class="checkbox-container">
+
+            <ol class="left-aligned">
+           <li><label><input type="checkbox" name="paw" value="1"> Sit on forbes golf course</label></li>
+            <li><label><input type="checkbox" name="paw" value="2"> Discover a secret garden</label></li>
+            <li><label><input type="checkbox" name="paw" value="3"> See campus fox </label></li>
+            <li><label><input type="checkbox" name="paw" value="4"> See campus black squirrels </label></li>
+            <li><label><input type="checkbox" name="paw" value="5"> Study in firestone</label></li>
+            <li><label><input type="checkbox" name="paw" value="6"> Professor denies you extension</label></li>
+            <li><label><input type="checkbox" name="paw" value="7"> Professor approves of an extension</label></li>
+            <li><label><input type="checkbox" name="paw" value="8"> Walk through spia fountain no shoes</label></li>
+            <li><label><input type="checkbox" name="paw" value="9"> Go to a pregame </label></li>
+            <li><label><input type="checkbox" name="paw" value="10"> Visit a quad on your floor </label></li>
+            <li><label><input type="checkbox" name="paw" value="11"> Meet all your zee mates </label></li>
+            <li><label><input type="checkbox" name="paw" value="12"> Spa self care night (alone) </label></li>
+            <li><label><input type="checkbox" name="paw" value="13"> Spa self care night (with roomies) </label></li>
+            <li><label><input type="checkbox" name="paw" value="14"> Take out the trash </label></li>
+            <li><label><input type="checkbox" name="paw" value="15"> Do laundry (ask mom?) </label></li>
+            <li><label><input type="checkbox" name="paw" value="16"> Take Parents out to brunch in town </label></li>
+            <li><label><input type="checkbox" name="paw" value="17"> Get a pass to an eating club </label></li>
+            <li><label><input type="checkbox" name="paw" value="18"> Swim in the dillon pool </label></li>
+            <li><label><input type="checkbox" name="paw" value="19"> Take a group fitness class </label></li>
+            <li><label><input type="checkbox" name="paw" value="20"> Work out in dillon gym </label></li>
+            <li><label><input type="checkbox" name="paw" value="21"> Talk to an athlete (or a narp) </label></li>
+            <li><label><input type="checkbox" name="paw" value="22"> Get an A in a class </label></li>
+            <li><label><input type="checkbox" name="paw" value="23"> Ask a question you were scared to ask </label></li>
+            <li><label><input type="checkbox" name="paw" value="24"> Go to a res college social night event </label></li>
+            <li><label><input type="checkbox" name="paw" value="25"> Attend Lawnparties </label></li>
+            <li><label><input type="checkbox" name="paw" value="26"> Learn a new skill/art/sport </label></li>
+            <li><label><input type="checkbox" name="paw" value="27"> Get a parking ticket </label></li>
+            <li><label><input type="checkbox" name="paw" value="28"> See a dance show </label></li>
+            <li><label><input type="checkbox" name="paw" value="29"> See an orchestra show </label></li>
+            <li><label><input type="checkbox" name="paw" value="30"> Spot a campus bird and/or nest </label></li>
+            <li><label><input type="checkbox" name="paw" value="31"> Make a charcuterie board </label></li>
+            <li><label><input type="checkbox" name="paw" value="32"> Cook dinner in dorm kitchen </label></li>
+            <li><label><input type="checkbox" name="paw" value="33"> Visit an art exhibit </label></li>
+            <li><label><input type="checkbox" name="paw" value="34"> Run on the towpath </label></li>
+            <li><label><input type="checkbox" name="paw" value="35"> Say hi to a construction worker </label></li>
+            <li><label><input type="checkbox" name="paw" value="36"> Switch degrees (AB -> BSE or BSE -> AB) </label></li>
+            <li><label><input type="checkbox" name="paw" value="37"> Switch majors </label></li>
+            </ol>
+
+
+
+        </div>
+        <input type="hidden" id="selectedCount" name="count" value="0">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('colorForm').addEventListener('submit', function(event) {
+        const checkboxes = document.querySelectorAll('input[name="paw"]:checked');
+        document.getElementById('selectedCount').value = checkboxes.length;
+    });
+</script>
+</body>
+</html>
