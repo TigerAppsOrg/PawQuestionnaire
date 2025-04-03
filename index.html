@@ -94,6 +94,13 @@
             <li><label><input type="checkbox" name="paw" value="35"> Say hi to a construction worker </label></li>
             <li><label><input type="checkbox" name="paw" value="36"> Switch degrees (AB -> BSE or BSE -> AB) </label></li>
             <li><label><input type="checkbox" name="paw" value="37"> Switch majors </label></li>
+            <li><label><input type="checkbox" name="paw" value="38"> S </label></li>
+            <li><label><input type="checkbox" name="paw" value="39"> S </label></li>
+            <li><label><input type="checkbox" name="paw" value="38"> S </label></li>
+            <li><label><input type="checkbox" name="paw" value="39"> S </label></li>
+
+
+
             </ol>
 
 
@@ -108,6 +115,10 @@
     document.getElementById('colorForm').addEventListener('submit', function(event) {
         const checkboxes = document.querySelectorAll('input[name="paw"]:checked');
         document.getElementById('selectedCount').value = checkboxes.length;
+        localStorage.setItem('quizScore', checkboxes.length);
+
+   // ????
+   //     window.location.href = "results.html";
     });
 </script>
 </body>

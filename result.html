@@ -36,9 +36,27 @@
     <h2>My Princeton Paw Score is</h2>
     <p id="result">Loading...</p>
     <button onclick="goBack()">Go Back</button>
+
+    <button onclick="shareResults()">Share on iMessage</button>
+
 </div>
 
 <script>
+// ----------
+    document.addEventListener("DOMContentLoaded", function() {
+        let score = localStorage.getItem('quizScore') || 0;
+        document.getElementById('score').textContent = score;
+    });
+
+    function shareResults() {
+        let score = localStorage.getItem('quizScore') || 0;
+        let shareText = `Take the Official Princeton Paw Questionnaire! I got ${score}!`;
+        let shareURL = encodeURIComponent("https://yourwebsite.com/index.html"); // Replace with actual URL
+        let imessageURL = `sms:&body=${encodeURIComponent(shareText)}%20${shareURL}`;
+        window.location.href = imessageURL;
+    }
+  // ----------
+
     function getQueryParam(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name) || 0;
