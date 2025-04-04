@@ -11,7 +11,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('orange.jpg');
+            background-image: url('orangebackground.jpg');
+        }
+
+
+        h3 {
+            font-size: 50px;
+            color: #ff660d;
+            margin: 10px
+
         }
         .container {
             background: #f5f4e6;
@@ -34,7 +42,7 @@
 <body>
 <div class="container">
     <h2>My Princeton Paw Score is</h2>
-    <p id="result">Loading...</p>
+    <h3 id="result">Loading...</h3>
     <button onclick="goBack()">Go Back</button>
 
     <button onclick="shareResults()">Share on iMessage</button>
@@ -50,7 +58,7 @@
 
     function shareResults() {
         let score = localStorage.getItem('quizScore') || 0;
-        let shareText = `Take the Official Princeton Paw Questionnaire! I got ${score}!`;
+        let shareText = `I got a ${score} on the Official Princeton Paw Questionnaire. Take it here!`;
         let shareURL = encodeURIComponent("https://tigerappsorg.github.io/PawQuestionnaire/index.html"); // Replace with actual URL
         let imessageURL = `sms:&body=${encodeURIComponent(shareText)}%20${shareURL}`;
         window.location.href = imessageURL;
@@ -62,7 +70,7 @@
         return urlParams.get(name) || 0;
     }
 
-    document.getElementById('result').textContent = ` ${getQueryParam('count')}!`;
+    document.getElementById('result').textContent = ` ${getQueryParam('count')}`;
 
     function goBack() {
         window.history.back();
