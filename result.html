@@ -51,7 +51,7 @@
     function shareResults() {
         let score = localStorage.getItem('quizScore') || 0;
         let shareText = `Take the Official Princeton Paw Questionnaire! I got ${score}!`;
-        let shareURL = encodeURIComponent("https://yourwebsite.com/index.html"); // Replace with actual URL
+        let shareURL = encodeURIComponent("https://tigerappsorg.github.io/PawQuestionnaire/index.html"); // Replace with actual URL
         let imessageURL = `sms:&body=${encodeURIComponent(shareText)}%20${shareURL}`;
         window.location.href = imessageURL;
     }
